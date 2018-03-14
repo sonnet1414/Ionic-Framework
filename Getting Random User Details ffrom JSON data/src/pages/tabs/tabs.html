@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar style="text-align: center; font-size: 30px;">
+  	Random user Details
+    <button ion-button style="display: block; margin: 0 auto; float: right;" (click)="LogoutPage()">logout</button>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+<button ion-button full (click)="LoadJsonData()">load users</button>   <!-- calling load json data method -->
+<ion-avatar *ngFor="let user of users">
+	<img src="{{user.picture.large}}" alt="">
+</ion-avatar>
+<ion-list >                                                                           <!-- diplaying json data in itemlist -->
+	<ion-item *ngFor="let user of users" item-start>
+		<h1>Name: {{user.name.title}} {{user.name.first}} {{user.name.last}}</h1>     <!-- name fetching from json object -->
+	</ion-item>
+	<ion-item *ngFor="let user of users">
+		<h2>Date of Birth: {{user.dob}}</h2>                                           <!-- date of birth fetching from json object -->
+	</ion-item>
+	<ion-item *ngFor="let user of users">
+		<h2>Email: {{user.email}}</h2>                                                 <!-- email fetching from json object -->
+	</ion-item>
+	<ion-item *ngFor="let user of users">
+		<h2>Phone: {{user.phone}}</h2>                                                 <!-- phone no fetching from json object -->
+	</ion-item>
+	<ion-item *ngFor="let user of users">
+		<h2>Cell: {{user.cell}}</h2>                                                     <!-- cell fetching from json object -->
+	</ion-item>
+	<ion-item *ngFor="let user of users">
+		<h2>Location: {{user.location.street}}, {{user.location.city}}, {{user.location.state}} - {{user.location.postcode}}, </h2>
+	</ion-item>
+
+</ion-list>
+
+<div style="position: fixed; bottom: 0; width: 100%; background-color: 	#1E90FF; box-shadow: 10px 10px 10px 10px;">
+	<h5 style="margin-top: 5px; margin-left: 5px;" >Developed By</h5>
+	<p  style="margin-left: 5px;">Amit Hasan
+	<br/>Email: amithasan.ewubd@gmail.com, Cell: 01758548103</p>
+	<h6  style="margin-left: 5px;">Note **for the purpose of byte trek recruitment Process**</h6>
+	
+</div>
+</ion-content>
